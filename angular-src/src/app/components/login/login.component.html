@@ -1,3 +1,12 @@
-<p>
-  login works!
-</p>
+<h2 class="page-header" > Login</h2>
+<form (submit)='onLoginSubmit()'>
+  <div class="form-froup">
+    <label>Username</label>
+    <input type="text" [(ngModel)]='username' name = "username" class="form-control">
+  </div>
+  <div class="form-froup">
+      <label>password</label>
+      <input type="password" [(ngModel)]='password' name = "password"  class="form-control">
+  </div>
+  <input type="submit" class="btn btn-primary" value="Login">
+</form>

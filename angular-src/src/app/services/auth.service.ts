@@ -15,4 +15,16 @@ export class AuthService {
     return this.http.post('http://localhost:3000/users/register', user, {headers: headers})
     .map(res => res.json());
   }
+  authenticateUser(user){
+    let headers = new Headers();
+    headers.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3000/users/authentication', user, {headers: headers})
+    .map(res => res.json());
+  }
+  storeUserData(token, user){
+    localStorage.setItem('id_token', token);
+    localStorage.setItem('user', JSON.stringify(user));
+    this.authToken = token;
+    this.user = user;
+  }
 }
